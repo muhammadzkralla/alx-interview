@@ -16,6 +16,9 @@ def canUnlockAll(boxes):
 
 def dfs(boxes, currIdx):
     '''Dfs Function'''
+    if currIdx > len(boxes):
+        return
+
     visited.add(currIdx)
     box = boxes[currIdx]
 
