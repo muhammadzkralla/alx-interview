@@ -4,6 +4,7 @@ visited = set()
 
 
 def canUnlockAll(boxes):
+    '''Setup Function'''
     visited.clear()
     dfs(boxes, 0)
 
@@ -14,6 +15,7 @@ def canUnlockAll(boxes):
 
 
 def dfs(boxes, currIdx):
+    '''Dfs Function'''
     visited.add(currIdx)
     box = boxes[currIdx]
 
