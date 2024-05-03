@@ -2,7 +2,8 @@
 '''Lockboxes DFS Solution'''
 visited = set()
 
-def canUnlockAll(boxes) :
+
+def canUnlockAll(boxes):
     visited.clear()
     dfs(boxes, 0)
 
@@ -11,7 +12,8 @@ def canUnlockAll(boxes) :
 
     return False
 
-def dfs(boxes, currIdx) :
+
+def dfs(boxes, currIdx):
     visited.add(currIdx)
     box = boxes[currIdx]
 
