@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+'''Lockboxes DFS Solution'''
 visited = set()
 
 def canUnlockAll(boxes) :
