@@ -6,12 +6,14 @@ import sys
 def check(r, c, grid, n):
     # Check vertical (up and down)
     for i in range(1, n):
-        if (r - i >= 0 and grid[r - i][c] == 1) or (r + i < n and grid[r + i][c] == 1):
+        if (r - i >= 0 and grid[r - i][c] == 1) or \
+                (r + i < n and grid[r + i][c] == 1):
             return False
 
     # Check horizontal (left and right)
     for i in range(1, n):
-        if (c - i >= 0 and grid[r][c - i] == 1) or (c + i < n and grid[r][c + i] == 1):
+        if (c - i >= 0 and grid[r][c - i] == 1) or \
+                (c + i < n and grid[r][c + i] == 1):
             return False
 
     # Check diagonals
