@@ -2,32 +2,16 @@
 """ N queens Backtracking solution. """
 import sys
 
-if len(sys.argv) > 2 or len(sys.argv) < 2:
-    print("Usage: nqueens N")
-    exit(1)
-
-if not sys.argv[1].isdigit():
-    print("N must be a number")
-    exit(1)
-
-if int(sys.argv[1]) < 4:
-    print("N must be at least 4")
-    exit(1)
-
-n = int(sys.argv[1])
-
 
 def check(r, c, grid, n):
     # Check vertical (up and down)
     for i in range(1, n):
-        if (r - i >= 0 and grid[r - i][c] == 1) or \
-                (r + i < n and grid[r + i][c] == 1):
+        if (r - i >= 0 and grid[r - i][c] == 1) or (r + i < n and grid[r + i][c] == 1):
             return False
 
     # Check horizontal (left and right)
     for i in range(1, n):
-        if (c - i >= 0 and grid[r][c - i] == 1) or \
-                (c + i < n and grid[r][c + i] == 1):
+        if (c - i >= 0 and grid[r][c - i] == 1) or (c + i < n and grid[r][c + i] == 1):
             return False
 
     # Check diagonals
@@ -77,4 +61,19 @@ def solve(n):
         print(i)
 
 
-solve(n)
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
+
+    try:
+        n = int(sys.argv[1])
+    except ValueError:
+        print("N must be a number")
+        sys.exit(1)
+
+    if n < 4:
+        print("N must be at least 4")
+        sys.exit(1)
+
+    solve(n)
